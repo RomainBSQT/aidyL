@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Combine
 
 protocol ListPresenterLogic {
     func start()
-    func present(_ profiles: [Profile])
+    func present(_ profiles: [(profile: Profile, imagePublisher: AnyPublisher<UIImage, Never>)])
 }
 
 final class ListPresenter: ListPresenterLogic {
@@ -31,13 +32,15 @@ final class ListPresenter: ListPresenterLogic {
         display?.initial(ListScene.InitialViewModel())
     }
     
-    func present(_ profiles: [Profile]) {
-        let viewModels = profiles.enumerated().map { index, profile in
+    func present(_ profileTuples: [(profile: Profile, imagePublisher: AnyPublisher<UIImage, Never>)]) {
+        let viewModels = profileTuples.enumerated().map { index, tuple in
             let colorIndex = index % colors.count
             return ListScene.ProfilesViewModel.ProfileViewModel(
-                firstName: profile.name.first,
-                lastName: profile.name.last,
-                color: colors[colorIndex]
+                id: tuple.profile.id,
+                firstName: tuple.profile.name.first,
+                lastName: tuple.profile.name.last,
+                color: colors[colorIndex],
+                imagePublisher: tuple.imagePublisher
             )
         }
         display?.profiles(ListScene.ProfilesViewModel(profiles: viewModels))

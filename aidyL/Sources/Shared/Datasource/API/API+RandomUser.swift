@@ -7,9 +7,11 @@
 
 import Foundation
 import Combine
+import UIKit
 
 protocol RandomUserDatasource {
     func fetchRandomUsers(amount: Int, page: Int) -> AnyPublisher<[Profile], APIError>
+    func downloadProfileImage(url: URL) -> AnyPublisher<UIImage, Never>
 }
 
 extension API: RandomUserDatasource {
@@ -28,6 +30,10 @@ extension API: RandomUserDatasource {
             .mapError(APIError.init)
             .map(\.results)
             .eraseToAnyPublisher()
+    }
+    
+    func downloadProfileImage(url: URL) -> AnyPublisher<UIImage, Never> {
+        return downloadImage(url: url)
     }
 }
 

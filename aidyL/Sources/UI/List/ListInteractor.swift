@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 protocol ListInteractorLogic {
     func start()
@@ -31,16 +32,24 @@ final class ListInteractor: ListInteractorLogic {
     }
     
     func loadProfiles() {
-        worker.fetchRandomUsers(amount: 50, page: 1)
-            .sink { completion in
+        worker.fetchRandomUsers(amount: 10, page: 1)
+            .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished: break
                 case .failure: break
                 }
-            } receiveValue: { [weak self] profiles in
+            }, receiveValue: { [weak self] profiles in
                 guard let self = self else { return }
-                self.presenter.present(profiles)
-            }
+                let profileTuples: [
+                    (profile: Profile, imagePublisher: AnyPublisher<UIImage, Never>)
+                ] = profiles.map { profile in
+                    return (
+                        profile,
+                        self.worker.downloadImage(url: profile.picture.medium)
+                    )
+                }
+                self.presenter.present(profileTuples)
+            })
             .store(in: &subscriptions)
     }
 }

@@ -8,16 +8,17 @@
 import Foundation
 
 struct Profile: Identifiable, Codable {
-    
     let id: String = UUID().uuidString
     var gender: Gender { Gender(string: genderRaw) }
     let name: Name
+    let picture: Picture
 
     private let genderRaw: String
     
     enum CodingKeys: String, CodingKey {
         case genderRaw = "gender"
         case name
+        case picture
     }
     
     enum Gender {
@@ -38,6 +39,12 @@ struct Profile: Identifiable, Codable {
         let title: String
         let first: String
         let last: String
+    }
+    
+    struct Picture: Codable {
+        let large: URL
+        let medium: URL
+        let thumbnail: URL
     }
 }
 

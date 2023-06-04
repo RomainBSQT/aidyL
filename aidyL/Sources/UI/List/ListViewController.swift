@@ -13,6 +13,10 @@ protocol ListDisplayLogic: AnyObject {
 }
 
 final class ListViewController: UIViewController {
+    private enum LayoutConstants {
+        static let margin: CGFloat = 15
+    }
+    
     // MARK: - UI elements
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -77,11 +81,17 @@ extension ListViewController: UITableViewDelegate {
 private extension ListViewController {
     func configure() {
         view.backgroundColor = .white
-        view.embed(tableView, inset: 15)
+        view.embed(
+            tableView,
+            topInset: 0,
+            leadingInset: LayoutConstants.margin,
+            bottomInset: 0,
+            trailingInset: LayoutConstants.margin
+        )
+        tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
         tableView.dataSource = diffableDatasource
         tableView.delegate = self
-        tableView.clipsToBounds = true
     }
 }
