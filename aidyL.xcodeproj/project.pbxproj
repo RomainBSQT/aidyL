@@ -41,6 +41,7 @@
 		301B7D0C2A2BCF3600FBA147 /* UIEdgeInsets+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B7D0A2A2BCF3600FBA147 /* UIEdgeInsets+Convenience.swift */; };
 		307FD72B2A2DF60900AD0D3E /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD72A2A2DF60900AD0D3E /* String+Localized.swift */; };
 		307FD72D2A2DFEBB00AD0D3E /* LoaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD72C2A2DFEBB00AD0D3E /* LoaderCell.swift */; };
+		307FD7302A2E384200AD0D3E /* UIColor+System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD72F2A2E384200AD0D3E /* UIColor+System.swift */; };
 		30B3DE0A2A2CA6E800E3CFA8 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B3DE092A2CA6E800E3CFA8 /* UIImageView+Download.swift */; };
 		30B3DE192A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B3DE102A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Semibold.otf */; };
 		30B3DE1A2A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B3DE112A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Bold.otf */; };
@@ -90,6 +91,7 @@
 		301B7D0A2A2BCF3600FBA147 /* UIEdgeInsets+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Convenience.swift"; sourceTree = "<group>"; };
 		307FD72A2A2DF60900AD0D3E /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		307FD72C2A2DFEBB00AD0D3E /* LoaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderCell.swift; sourceTree = "<group>"; };
+		307FD72F2A2E384200AD0D3E /* UIColor+System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+System.swift"; sourceTree = "<group>"; };
 		30B3DE092A2CA6E800E3CFA8 /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
 		30B3DE102A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
 		30B3DE112A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				30B3DE092A2CA6E800E3CFA8 /* UIImageView+Download.swift */,
 				30B3DE242A2CC53400E3CFA8 /* UIFont+Custom.swift */,
 				307FD72A2A2DF60900AD0D3E /* String+Localized.swift */,
+				307FD72F2A2E384200AD0D3E /* UIColor+System.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				301B7D082A2B97CC00FBA147 /* UITableView+Reuse.swift in Sources */,
 				3010BB842A2B50E2000A9440 /* ListViewController.swift in Sources */,
 				301B7CFC2A2B95A600FBA147 /* ListViewModel.swift in Sources */,
+				307FD7302A2E384200AD0D3E /* UIColor+System.swift in Sources */,
 				30B3DE252A2CC53400E3CFA8 /* UIFont+Custom.swift in Sources */,
 				301B7CF12A2B8CE300FBA147 /* API+RandomUser.swift in Sources */,
 				301B7CF92A2B94A600FBA147 /* ProfileCell.swift in Sources */,

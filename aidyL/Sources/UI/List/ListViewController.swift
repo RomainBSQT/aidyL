@@ -10,6 +10,7 @@ import UIKit
 protocol ListDisplayLogic: AnyObject {
     func initial(_ viewModel: ListScene.InitialViewModel)
     func profiles(_ viewModel: ListScene.ProfilesViewModel)
+    func showDetail(profile: ProfileConfiguration)
 }
 
 final class ListViewController: UIViewController {
@@ -83,6 +84,10 @@ extension ListViewController: ListDisplayLogic {
 //            completion: { _ in self.refreshControl.endRefreshing() }
 //        )
     }
+    
+    func showDetail(profile: ProfileConfiguration) {
+        router.routeToDetail(profile: profile)
+    }
 }
 
 extension ListViewController: UITableViewDataSource {
@@ -102,7 +107,7 @@ extension ListViewController: UITableViewDataSource {
         switch TableViewSection(rawValue: indexPath.section) {
         case .list:
             let cell: ProfileCell = tableView.dequeueReusable(at: indexPath)
-            cell.configure(indexPath.row, viewModel: cellViewModels[indexPath.row])
+            cell.configure(cellViewModels[indexPath.row])
             return cell
         case .loadingFooter:
             return tableView.dequeueReusable(at: indexPath) as LoaderCell
@@ -118,7 +123,9 @@ extension ListViewController: UITableViewDataSource {
 }
 
 extension ListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        interactor.selectProfile(indexPath.row)
+    }
 }
 
 private extension ListViewController {

@@ -13,10 +13,12 @@ protocol ListInteractorLogic {
     func start()
     func loadProfiles()
     func freshLoadProfiles()
+    func selectProfile(_ index: Int)
 }
 
 struct ProfileConfiguration {
     let profile: Profile
+    let color: UIColor
     let imageDownloader: AnyPublisher<UIImage, Never>
 }
 
@@ -51,7 +53,7 @@ final class ListInteractor: ListInteractorLogic {
             amount: Constants.resultAmount,
             page: currentPage
         )
-        handleFetching(publisher: publisher)            
+        handleFetching(publisher: publisher)
     }
     
     func freshLoadProfiles() {
@@ -61,6 +63,11 @@ final class ListInteractor: ListInteractorLogic {
             page: currentPage
         )
         handleFetching(publisher: publisher)
+    }
+    
+    func selectProfile(_ index: Int) {
+        guard index < profiles.count else { return }
+        presenter.showDetail(profile: profiles[index])
     }
 }
 
@@ -86,7 +93,10 @@ private extension ListInteractor {
                 }
             }, receiveValue: { [weak self] profiles in
                 guard let self = self else { return }
-                let profileConfigurations = profiles.mappedToProfileConfiguration(worker: worker)
+                let profileConfigurations = profiles.mappedToProfileConfiguration(
+                    indexOffset: self.profiles.count,
+                    worker: worker
+                )
                 self.profiles.append(contentsOf: profileConfigurations)
                 self.presenter.present(self.profiles)
             })
@@ -95,10 +105,14 @@ private extension ListInteractor {
 }
 
 private extension Array where Element == Profile {
-    func mappedToProfileConfiguration(worker: RandomUserBusinessLogic) -> [ProfileConfiguration] {
-        map { profile in
+    func mappedToProfileConfiguration(
+        indexOffset: Int,
+        worker: RandomUserBusinessLogic
+    ) -> [ProfileConfiguration] {
+        enumerated().map { index, profile in
             return ProfileConfiguration(
                 profile: profile,
+                color: UIColor.systemColor(indexOffset + index),
                 imageDownloader: worker.downloadImage(url: profile.picture.medium)
             )
         }

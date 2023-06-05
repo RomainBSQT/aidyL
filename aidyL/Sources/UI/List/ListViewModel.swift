@@ -19,6 +19,7 @@ enum ListScene {
         struct ProfileViewModel {
             let name: String
             let email: String
+            let color: UIColor
             
             let imagePublisher: AnyPublisher<UIImage, Never>
         }

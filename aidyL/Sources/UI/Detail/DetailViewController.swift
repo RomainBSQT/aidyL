@@ -8,8 +8,9 @@
 import UIKit
 
 final class DetailViewController: UIViewController {
-    init(profile: Profile) {
+    init(profile: ProfileConfiguration) {
         super.init(nibName: nil, bundle: nil)
+        view.backgroundColor = profile.color
     }
     
     required init?(coder: NSCoder) {
@@ -18,7 +19,6 @@ final class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemRed
     }
 }
 

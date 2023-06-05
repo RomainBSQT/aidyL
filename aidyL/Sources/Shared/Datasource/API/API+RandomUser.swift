@@ -42,7 +42,9 @@ private extension API {
             URLQueryItem(name: "results", value: String(amount)),
             URLQueryItem(name: "page", value: String(page))
         ]
-        guard let url = components.url else { fatalError() }
+        guard let url = components.url else {
+            return Fail(error: APIError.urlFormat).eraseToAnyPublisher()
+        }
         let request = URLRequest(url: url, cachePolicy: cachePolicy)
         return get(type: RandomUserResponse.self, request: request)
             .map(\.results)

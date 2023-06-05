@@ -52,18 +52,7 @@ final class ProfileCell: UITableViewCell {
       startPoint: CGPoint(x: 0, y: 1),
       endPoint: CGPoint(x: 0, y: 0)
     )
-    
-    private lazy var colors: [UIColor] = [
-        .systemRed,
-        .systemOrange,
-        .systemGreen,
-        .systemMint,
-        .systemBlue,
-        .systemIndigo,
-        .systemPurple,
-        .systemPink,
-        .systemBrown
-    ]
+
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -87,8 +76,8 @@ final class ProfileCell: UITableViewCell {
         profileImageView.image = nil
     }
 
-    func configure(_ index: Int, viewModel: ListScene.ProfilesViewModel.ProfileViewModel) {
-        roundedView.backgroundColor = colors[index % colors.count]
+    func configure(_ viewModel: ListScene.ProfilesViewModel.ProfileViewModel) {
+        roundedView.backgroundColor = viewModel.color
         nameLabel.text = viewModel.name
         emailLabel.text = viewModel.email
         profileImageView.downloadImage(publisher: viewModel.imagePublisher).store(in: &cancellables)

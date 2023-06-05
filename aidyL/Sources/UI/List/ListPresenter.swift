@@ -11,6 +11,7 @@ import Combine
 protocol ListPresenterLogic {
     func start()
     func present(_ profiles: [ProfileConfiguration])
+    func showDetail(profile: ProfileConfiguration)
 }
 
 final class ListPresenter: ListPresenterLogic {
@@ -23,6 +24,10 @@ final class ListPresenter: ListPresenterLogic {
     func present(_ profiles: [ProfileConfiguration]) {
         display?.profiles(ListScene.ProfilesViewModel(profiles: profiles.mappedToViewModels))
     }
+    
+    func showDetail(profile: ProfileConfiguration) {
+        display?.showDetail(profile: profile)
+    }
 }
 
 private extension Array where Element == ProfileConfiguration {
@@ -31,6 +36,7 @@ private extension Array where Element == ProfileConfiguration {
             return ListScene.ProfilesViewModel.ProfileViewModel(
                 name: "\(profile.profile.name.first) \(profile.profile.name.last)",
                 email: profile.profile.email,
+                color: profile.color,
                 imagePublisher: profile.imageDownloader
             )
         }
