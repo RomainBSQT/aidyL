@@ -27,7 +27,16 @@ final class ProfileCell: UITableViewCell {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont(name: "SFProRounded-Bold", size: 36)
+        label.font = .title
+        label.numberOfLines = 0
+        label.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        return label
+    }()
+    
+    private let emailLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = .body
         return label
     }()
     
@@ -43,6 +52,18 @@ final class ProfileCell: UITableViewCell {
       startPoint: CGPoint(x: 0, y: 1),
       endPoint: CGPoint(x: 0, y: 0)
     )
+    
+    private lazy var colors: [UIColor] = [
+        .systemRed,
+        .systemOrange,
+        .systemGreen,
+        .systemMint,
+        .systemBlue,
+        .systemIndigo,
+        .systemPurple,
+        .systemPink,
+        .systemBrown
+    ]
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -60,10 +81,16 @@ final class ProfileCell: UITableViewCell {
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
         blackGradient.frame = roundedView.bounds
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        profileImageView.image = nil
+    }
 
-    func configure(_ viewModel: ListScene.ProfilesViewModel.ProfileViewModel) {
-        roundedView.backgroundColor = viewModel.color
-        nameLabel.text = viewModel.firstName
+    func configure(_ index: Int, viewModel: ListScene.ProfilesViewModel.ProfileViewModel) {
+        roundedView.backgroundColor = colors[index % colors.count]
+        nameLabel.text = viewModel.name
+        emailLabel.text = viewModel.email
         profileImageView.downloadImage(publisher: viewModel.imagePublisher).store(in: &cancellables)
     }
 }
@@ -101,13 +128,19 @@ private extension ProfileCell {
     
     func setupLabels() {
         roundedView.addSubview(labelStackView)
+        let bottomConstraint = labelStackView.bottomAnchor.constraint(
+            greaterThanOrEqualTo: roundedView.bottomAnchor,
+            constant: -15
+        )
+        bottomConstraint.priority = UILayoutPriority(750)
         NSLayoutConstraint.activate([
             profileImageView.topAnchor.constraint(equalTo: labelStackView.topAnchor),
             labelStackView.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 15),
-            labelStackView.bottomAnchor.constraint(greaterThanOrEqualTo: roundedView.bottomAnchor, constant: -15),
-            labelStackView.rightAnchor.constraint(equalTo: roundedView.rightAnchor, constant: 15)
+            bottomConstraint,
+            roundedView.rightAnchor.constraint(equalTo: labelStackView.rightAnchor, constant: 15)
         ])
         labelStackView.addArrangedSubview(nameLabel)
+        labelStackView.addArrangedSubview(emailLabel)
     }
     
     func setupGradient() {

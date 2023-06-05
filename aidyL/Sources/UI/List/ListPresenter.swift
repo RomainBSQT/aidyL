@@ -10,39 +10,29 @@ import Combine
 
 protocol ListPresenterLogic {
     func start()
-    func present(_ profiles: [(profile: Profile, imagePublisher: AnyPublisher<UIImage, Never>)])
+    func present(_ profiles: [ProfileConfiguration])
 }
 
 final class ListPresenter: ListPresenterLogic {
     weak var display: ListDisplayLogic?
     
-    private lazy var colors: [UIColor] = [
-        .systemRed,
-        .systemOrange,
-        .systemGreen,
-        .systemMint,
-        .systemBlue,
-        .systemIndigo,
-        .systemPurple,
-        .systemPink,
-        .systemBrown
-    ]
-    
     func start() {
         display?.initial(ListScene.InitialViewModel())
     }
     
-    func present(_ profileTuples: [(profile: Profile, imagePublisher: AnyPublisher<UIImage, Never>)]) {
-        let viewModels = profileTuples.enumerated().map { index, tuple in
-            let colorIndex = index % colors.count
+    func present(_ profiles: [ProfileConfiguration]) {
+        display?.profiles(ListScene.ProfilesViewModel(profiles: profiles.mappedToViewModels))
+    }
+}
+
+private extension Array where Element == ProfileConfiguration {
+    var mappedToViewModels: [ListScene.ProfilesViewModel.ProfileViewModel] {
+        enumerated().map { index, profile in
             return ListScene.ProfilesViewModel.ProfileViewModel(
-                id: tuple.profile.id,
-                firstName: tuple.profile.name.first,
-                lastName: tuple.profile.name.last,
-                color: colors[colorIndex],
-                imagePublisher: tuple.imagePublisher
+                name: "\(profile.profile.name.first) \(profile.profile.name.last)",
+                email: profile.profile.email,
+                imagePublisher: profile.imageDownloader
             )
         }
-        display?.profiles(ListScene.ProfilesViewModel(profiles: viewModels))
     }
 }

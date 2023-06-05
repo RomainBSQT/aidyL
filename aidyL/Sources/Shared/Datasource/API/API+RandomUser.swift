@@ -20,15 +20,17 @@ extension API: RandomUserDatasource {
     }
 
     func fetchRandomUsers(amount: Int, page: Int) -> AnyPublisher<[Profile], APIError> {
-        guard var components = URLComponents(string: Url.base) else { fatalError() }
+        guard var components = URLComponents(string: Url.base) else {
+            return Fail(error: APIError.urlFormat).eraseToAnyPublisher()
+        }
         components.queryItems = [
             URLQueryItem(name: "results", value: String(amount))
         ]
         guard let url = components.url else { fatalError() }
         let request = URLRequest(url: url)
         return get(type: RandomUserResponse.self, request: request)
-            .mapError(APIError.init)
             .map(\.results)
+            .mapError(APIError.init)
             .eraseToAnyPublisher()
     }
     

@@ -40,7 +40,8 @@ final class API {
 }
 
 enum APIError: Error {
-    case timeOut
+    case urlFormat
+    case connectivity
     case server
     
     init(error: Error) {
@@ -48,7 +49,7 @@ enum APIError: Error {
         case NSURLErrorTimedOut,
             NSURLErrorNotConnectedToInternet,
             NSURLErrorNetworkConnectionLost:
-            self = .timeOut
+            self = .connectivity
         default:
             self = .server
         }

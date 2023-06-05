@@ -12,13 +12,15 @@ struct Profile: Identifiable, Codable {
     var gender: Gender { Gender(string: genderRaw) }
     let name: Name
     let picture: Picture
-
+    let email: String
+        
     private let genderRaw: String
     
     enum CodingKeys: String, CodingKey {
         case genderRaw = "gender"
         case name
         case picture
+        case email
     }
     
     enum Gender {

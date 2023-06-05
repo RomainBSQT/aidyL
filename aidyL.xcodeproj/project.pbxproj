@@ -39,6 +39,8 @@
 		301B7D092A2B97CC00FBA147 /* UITableView+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B7D072A2B97CC00FBA147 /* UITableView+Reuse.swift */; };
 		301B7D0B2A2BCF3600FBA147 /* UIEdgeInsets+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B7D0A2A2BCF3600FBA147 /* UIEdgeInsets+Convenience.swift */; };
 		301B7D0C2A2BCF3600FBA147 /* UIEdgeInsets+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B7D0A2A2BCF3600FBA147 /* UIEdgeInsets+Convenience.swift */; };
+		307FD72B2A2DF60900AD0D3E /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD72A2A2DF60900AD0D3E /* String+Localized.swift */; };
+		307FD72D2A2DFEBB00AD0D3E /* LoaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD72C2A2DFEBB00AD0D3E /* LoaderCell.swift */; };
 		30B3DE0A2A2CA6E800E3CFA8 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B3DE092A2CA6E800E3CFA8 /* UIImageView+Download.swift */; };
 		30B3DE192A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B3DE102A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Semibold.otf */; };
 		30B3DE1A2A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B3DE112A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Bold.otf */; };
@@ -49,6 +51,7 @@
 		30B3DE1F2A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B3DE162A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Light.otf */; };
 		30B3DE202A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B3DE172A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Black.otf */; };
 		30B3DE212A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B3DE182A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Thin.otf */; };
+		30B3DE252A2CC53400E3CFA8 /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B3DE242A2CC53400E3CFA8 /* UIFont+Custom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,8 @@
 		301B7D042A2B978B00FBA147 /* UITableViewCell+Reuse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Reuse.swift"; sourceTree = "<group>"; };
 		301B7D072A2B97CC00FBA147 /* UITableView+Reuse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reuse.swift"; sourceTree = "<group>"; };
 		301B7D0A2A2BCF3600FBA147 /* UIEdgeInsets+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Convenience.swift"; sourceTree = "<group>"; };
+		307FD72A2A2DF60900AD0D3E /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		307FD72C2A2DFEBB00AD0D3E /* LoaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderCell.swift; sourceTree = "<group>"; };
 		30B3DE092A2CA6E800E3CFA8 /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
 		30B3DE102A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
 		30B3DE112A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
@@ -95,6 +100,7 @@
 		30B3DE162A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Light.otf"; sourceTree = "<group>"; };
 		30B3DE172A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
 		30B3DE182A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
+		30B3DE242A2CC53400E3CFA8 /* UIFont+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Custom.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,7 +242,7 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		301B7CF32A2B93CD00FBA147 /* Convenience */ = {
+		301B7CF32A2B93CD00FBA147 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				301B7CF42A2B93EE00FBA147 /* UIView+Embed.swift */,
@@ -244,14 +250,17 @@
 				301B7D072A2B97CC00FBA147 /* UITableView+Reuse.swift */,
 				301B7D0A2A2BCF3600FBA147 /* UIEdgeInsets+Convenience.swift */,
 				30B3DE092A2CA6E800E3CFA8 /* UIImageView+Download.swift */,
+				30B3DE242A2CC53400E3CFA8 /* UIFont+Custom.swift */,
+				307FD72A2A2DF60900AD0D3E /* String+Localized.swift */,
 			);
-			path = Convenience;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		301B7CF72A2B949400FBA147 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				301B7CF82A2B94A600FBA147 /* ProfileCell.swift */,
+				307FD72C2A2DFEBB00AD0D3E /* LoaderCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,7 +270,7 @@
 			children = (
 				301B7CE52A2B6D6700FBA147 /* Business */,
 				301B7CE42A2B667700FBA147 /* Datasource */,
-				301B7CF32A2B93CD00FBA147 /* Convenience */,
+				301B7CF32A2B93CD00FBA147 /* Extensions */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -397,6 +406,7 @@
 				301B7D082A2B97CC00FBA147 /* UITableView+Reuse.swift in Sources */,
 				3010BB842A2B50E2000A9440 /* ListViewController.swift in Sources */,
 				301B7CFC2A2B95A600FBA147 /* ListViewModel.swift in Sources */,
+				30B3DE252A2CC53400E3CFA8 /* UIFont+Custom.swift in Sources */,
 				301B7CF12A2B8CE300FBA147 /* API+RandomUser.swift in Sources */,
 				301B7CF92A2B94A600FBA147 /* ProfileCell.swift in Sources */,
 				301B7CFF2A2B95B200FBA147 /* ListInteractor.swift in Sources */,
@@ -404,8 +414,10 @@
 				301B7D0B2A2BCF3600FBA147 /* UIEdgeInsets+Convenience.swift in Sources */,
 				3010BB802A2B50E2000A9440 /* AppDelegate.swift in Sources */,
 				301B7CDE2A2B609200FBA147 /* ListRouter.swift in Sources */,
+				307FD72B2A2DF60900AD0D3E /* String+Localized.swift in Sources */,
 				301B7D052A2B978B00FBA147 /* UITableViewCell+Reuse.swift in Sources */,
 				3010BB822A2B50E2000A9440 /* SceneDelegate.swift in Sources */,
+				307FD72D2A2DFEBB00AD0D3E /* LoaderCell.swift in Sources */,
 				301B7CDC2A2B606B00FBA147 /* DetailViewController.swift in Sources */,
 				301B7CEB2A2B703F00FBA147 /* API.swift in Sources */,
 				301B7CE72A2B6D7400FBA147 /* RandomUserWorker.swift in Sources */,
