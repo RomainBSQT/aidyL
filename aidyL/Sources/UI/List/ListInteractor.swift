@@ -47,8 +47,35 @@ final class ListInteractor: ListInteractorLogic {
     func loadProfiles() {
         guard !isFetching else { return }
         isFetching = true
-        worker.fetchRandomUsers(amount: Constants.resultAmount, page: currentPage)
-            .delay(for: 3, scheduler: RunLoop.main)
+        let publisher = worker.fetchRandomUsers(
+            amount: Constants.resultAmount,
+            page: currentPage
+        )
+        handleFetching(publisher: publisher)            
+    }
+    
+    func freshLoadProfiles() {
+        cleanup()
+        let publisher = worker.fetchFreshRandomUsers(
+            amount: Constants.resultAmount,
+            page: currentPage
+        )
+        handleFetching(publisher: publisher)
+    }
+}
+
+private extension ListInteractor {
+    func cleanup() {
+        subscriptions.forEach { $0.cancel() }
+        subscriptions.removeAll()
+        isFetching = false
+        currentPage = 1
+        profiles = []
+    }
+    
+    func handleFetching(publisher: AnyPublisher<[Profile], APIError>) {
+        publisher
+        //            .delay(for: 3, scheduler: RunLoop.main)
             .sink(receiveCompletion: { [weak self] completion in
                 self?.isFetching = false
                 switch completion {
@@ -64,15 +91,6 @@ final class ListInteractor: ListInteractorLogic {
                 self.presenter.present(self.profiles)
             })
             .store(in: &subscriptions)
-    }
-    
-    func freshLoadProfiles() {
-        subscriptions.forEach { $0.cancel() }
-        subscriptions.removeAll()
-        isFetching = false
-        currentPage = 1
-        profiles = []
-        loadProfiles()
     }
 }
 

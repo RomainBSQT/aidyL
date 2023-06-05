@@ -73,13 +73,15 @@ extension ListViewController: ListDisplayLogic {
 
     func profiles(_ viewModel: ListScene.ProfilesViewModel) {
         cellViewModels = viewModel.profiles
-        UIView.transition(
-            with: tableView,
-            duration: 0.35,
-            options: .transitionCrossDissolve,
-            animations: { self.tableView.reloadData() },
-            completion: { _ in self.refreshControl.endRefreshing() }
-        )
+        tableView.reloadData()
+        refreshControl.endRefreshing()
+//        UIView.transition(
+//            with: tableView,
+//            duration: 0.35,
+//            options: .transitionCrossDissolve,
+//            animations: { self.tableView.reloadData() },
+//            completion: { _ in self.refreshControl.endRefreshing() }
+//        )
     }
 }
 
