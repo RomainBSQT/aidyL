@@ -31,6 +31,7 @@ final class ListViewController: UIViewController {
         tableView.registerIdentifiable(LoaderCell.self)
         return tableView
     }()
+    
     private let refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = .gray
@@ -64,6 +65,19 @@ final class ListViewController: UIViewController {
         configure()
         interactor.start()
         interactor.loadProfiles()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.largeTitleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.font: UIFont.largeTitleBold
+        ]
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.font: UIFont.titleMedium
+        ]
     }
 }
 
@@ -130,14 +144,7 @@ extension ListViewController: UITableViewDelegate {
 
 private extension ListViewController {
     func configure() {
-        navigationController?.navigationBar.largeTitleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.black,
-            NSAttributedString.Key.font: UIFont.largeTitleBold
-        ]
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.black,
-            NSAttributedString.Key.font: UIFont.titleMedium
-        ]
+        navigationItem.backButtonTitle = ""
         view.backgroundColor = .white
         view.embed(
             tableView,

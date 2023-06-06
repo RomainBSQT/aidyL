@@ -36,23 +36,23 @@ final class ProfileCell: UITableViewCell {
     private let emailLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = .body
+        label.font = .bodyLight
         return label
     }()
     
     private let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .systemCyan
+        imageView.backgroundColor = .systemGray6.withAlphaComponent(0.3)
         imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 20
         return imageView
     }()
     
     private let blackGradient = CAGradientLayer.makeBlackGradient(
-      startPoint: CGPoint(x: 0, y: 1),
-      endPoint: CGPoint(x: 0, y: 0)
+        startPoint: CGPoint(x: 0, y: 1),
+        endPoint: CGPoint(x: 0, y: 0)
     )
-
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -67,13 +67,13 @@ final class ProfileCell: UITableViewCell {
     
     override func layoutIfNeeded() {
         super.layoutIfNeeded()
-        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
         blackGradient.frame = roundedView.bounds
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         profileImageView.image = nil
+        cancellables.cleanup()
     }
 
     func configure(_ viewModel: ListScene.ProfilesViewModel.ProfileViewModel) {

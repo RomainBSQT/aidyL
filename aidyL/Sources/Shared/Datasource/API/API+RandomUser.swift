@@ -48,6 +48,10 @@ private extension API {
         let request = URLRequest(url: url, cachePolicy: cachePolicy)
         return get(type: RandomUserResponse.self, request: request)
             .map(\.results)
+            .mapError({ error in
+                print(error)
+                return APIError(error: error)
+            })
             .mapError(APIError.init)
             .eraseToAnyPublisher()
     }

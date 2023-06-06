@@ -18,8 +18,7 @@ extension UIColor {
             .systemBlue,
             .systemIndigo,
             .systemPurple,
-            .systemPink,
-            .systemBrown
+            .systemTeal
         ]
         return colors[index % colors.count]
     }

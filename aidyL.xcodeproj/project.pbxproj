@@ -42,6 +42,13 @@
 		307FD72B2A2DF60900AD0D3E /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD72A2A2DF60900AD0D3E /* String+Localized.swift */; };
 		307FD72D2A2DFEBB00AD0D3E /* LoaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD72C2A2DFEBB00AD0D3E /* LoaderCell.swift */; };
 		307FD7302A2E384200AD0D3E /* UIColor+System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD72F2A2E384200AD0D3E /* UIColor+System.swift */; };
+		307FD7322A2E3DDB00AD0D3E /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD7312A2E3DDB00AD0D3E /* DetailInteractor.swift */; };
+		307FD7342A2E3DEF00AD0D3E /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD7332A2E3DEF00AD0D3E /* DetailPresenter.swift */; };
+		307FD7352A2E3DEF00AD0D3E /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD7332A2E3DEF00AD0D3E /* DetailPresenter.swift */; };
+		307FD7372A2E3DFA00AD0D3E /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD7362A2E3DFA00AD0D3E /* DetailViewModel.swift */; };
+		307FD7382A2E3DFA00AD0D3E /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD7362A2E3DFA00AD0D3E /* DetailViewModel.swift */; };
+		307FD73A2A2F33B000AD0D3E /* Set+CancellableCleanup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD7392A2F33B000AD0D3E /* Set+CancellableCleanup.swift */; };
+		307FD73B2A2F33B000AD0D3E /* Set+CancellableCleanup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD7392A2F33B000AD0D3E /* Set+CancellableCleanup.swift */; };
 		30B3DE0A2A2CA6E800E3CFA8 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B3DE092A2CA6E800E3CFA8 /* UIImageView+Download.swift */; };
 		30B3DE192A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B3DE102A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Semibold.otf */; };
 		30B3DE1A2A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B3DE112A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Bold.otf */; };
@@ -92,6 +99,10 @@
 		307FD72A2A2DF60900AD0D3E /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		307FD72C2A2DFEBB00AD0D3E /* LoaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderCell.swift; sourceTree = "<group>"; };
 		307FD72F2A2E384200AD0D3E /* UIColor+System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+System.swift"; sourceTree = "<group>"; };
+		307FD7312A2E3DDB00AD0D3E /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		307FD7332A2E3DEF00AD0D3E /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		307FD7362A2E3DFA00AD0D3E /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		307FD7392A2F33B000AD0D3E /* Set+CancellableCleanup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+CancellableCleanup.swift"; sourceTree = "<group>"; };
 		30B3DE092A2CA6E800E3CFA8 /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
 		30B3DE102A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
 		30B3DE112A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
@@ -194,8 +205,8 @@
 			children = (
 				3010BB832A2B50E2000A9440 /* ListViewController.swift */,
 				301B7CFE2A2B95B200FBA147 /* ListInteractor.swift */,
-				301B7CFB2A2B95A600FBA147 /* ListViewModel.swift */,
 				301B7D012A2B95BD00FBA147 /* ListPresenter.swift */,
+				301B7CFB2A2B95A600FBA147 /* ListViewModel.swift */,
 				301B7CDD2A2B609200FBA147 /* ListRouter.swift */,
 				301B7CF72A2B949400FBA147 /* Views */,
 			);
@@ -206,6 +217,9 @@
 			isa = PBXGroup;
 			children = (
 				301B7CDB2A2B606B00FBA147 /* DetailViewController.swift */,
+				307FD7312A2E3DDB00AD0D3E /* DetailInteractor.swift */,
+				307FD7332A2E3DEF00AD0D3E /* DetailPresenter.swift */,
+				307FD7362A2E3DFA00AD0D3E /* DetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -255,6 +269,7 @@
 				30B3DE242A2CC53400E3CFA8 /* UIFont+Custom.swift */,
 				307FD72A2A2DF60900AD0D3E /* String+Localized.swift */,
 				307FD72F2A2E384200AD0D3E /* UIColor+System.swift */,
+				307FD7392A2F33B000AD0D3E /* Set+CancellableCleanup.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -414,14 +429,18 @@
 				301B7CF12A2B8CE300FBA147 /* API+RandomUser.swift in Sources */,
 				301B7CF92A2B94A600FBA147 /* ProfileCell.swift in Sources */,
 				301B7CFF2A2B95B200FBA147 /* ListInteractor.swift in Sources */,
+				307FD7342A2E3DEF00AD0D3E /* DetailPresenter.swift in Sources */,
 				301B7CE22A2B661600FBA147 /* Profile.swift in Sources */,
+				307FD7372A2E3DFA00AD0D3E /* DetailViewModel.swift in Sources */,
 				301B7D0B2A2BCF3600FBA147 /* UIEdgeInsets+Convenience.swift in Sources */,
 				3010BB802A2B50E2000A9440 /* AppDelegate.swift in Sources */,
 				301B7CDE2A2B609200FBA147 /* ListRouter.swift in Sources */,
 				307FD72B2A2DF60900AD0D3E /* String+Localized.swift in Sources */,
+				307FD73A2A2F33B000AD0D3E /* Set+CancellableCleanup.swift in Sources */,
 				301B7D052A2B978B00FBA147 /* UITableViewCell+Reuse.swift in Sources */,
 				3010BB822A2B50E2000A9440 /* SceneDelegate.swift in Sources */,
 				307FD72D2A2DFEBB00AD0D3E /* LoaderCell.swift in Sources */,
+				307FD7322A2E3DDB00AD0D3E /* DetailInteractor.swift in Sources */,
 				301B7CDC2A2B606B00FBA147 /* DetailViewController.swift in Sources */,
 				301B7CEB2A2B703F00FBA147 /* API.swift in Sources */,
 				301B7CE72A2B6D7400FBA147 /* RandomUserWorker.swift in Sources */,
@@ -437,13 +456,16 @@
 				301B7D092A2B97CC00FBA147 /* UITableView+Reuse.swift in Sources */,
 				3010BB972A2B50E4000A9440 /* aidyLTests.swift in Sources */,
 				301B7CE82A2B6D7400FBA147 /* RandomUserWorker.swift in Sources */,
+				307FD7352A2E3DEF00AD0D3E /* DetailPresenter.swift in Sources */,
 				301B7D0C2A2BCF3600FBA147 /* UIEdgeInsets+Convenience.swift in Sources */,
 				301B7D062A2B978B00FBA147 /* UITableViewCell+Reuse.swift in Sources */,
 				301B7D002A2B95B200FBA147 /* ListInteractor.swift in Sources */,
 				301B7CF22A2B8CE300FBA147 /* API+RandomUser.swift in Sources */,
 				301B7CEC2A2B703F00FBA147 /* API.swift in Sources */,
 				301B7CE32A2B661600FBA147 /* Profile.swift in Sources */,
+				307FD73B2A2F33B000AD0D3E /* Set+CancellableCleanup.swift in Sources */,
 				301B7CFD2A2B95A600FBA147 /* ListViewModel.swift in Sources */,
+				307FD7382A2E3DFA00AD0D3E /* DetailViewModel.swift in Sources */,
 				301B7CFA2A2B94A600FBA147 /* ProfileCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,6 +619,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -626,6 +649,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

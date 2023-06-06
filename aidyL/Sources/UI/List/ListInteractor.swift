@@ -73,8 +73,7 @@ final class ListInteractor: ListInteractorLogic {
 
 private extension ListInteractor {
     func cleanup() {
-        subscriptions.forEach { $0.cancel() }
-        subscriptions.removeAll()
+        subscriptions.cleanup()
         isFetching = false
         currentPage = 1
         profiles = []
@@ -89,6 +88,7 @@ private extension ListInteractor {
                 case .finished:
                     self?.currentPage += 1
                 case .failure:
+                    print("")
                     break
                 }
             }, receiveValue: { [weak self] profiles in
@@ -113,7 +113,7 @@ private extension Array where Element == Profile {
             return ProfileConfiguration(
                 profile: profile,
                 color: UIColor.systemColor(indexOffset + index),
-                imageDownloader: worker.downloadImage(url: profile.picture.medium)
+                imageDownloader: worker.downloadImage(url: profile.picture.large)
             )
         }
     }
