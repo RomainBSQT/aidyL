@@ -35,18 +35,18 @@ private extension DetailInteractor {
             let latitude = CLLocationDegrees(profile.profile.location.coordinates.latitude),
             let longitude = CLLocationDegrees(profile.profile.location.coordinates.longitude)
         else { return }
-                
+        let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        guard CLLocationCoordinate2DIsValid(coordinates) else { return }
+        
+        
         let options = MKMapSnapshotter.Options()
         options.region = MKCoordinateRegion(
-            center: CLLocationCoordinate2D(
-                latitude: latitude,
-                longitude: longitude
-            ),
-            latitudinalMeters: 1500000,
-            longitudinalMeters: 1500000
+            center: coordinates,
+            latitudinalMeters: 100,
+            longitudinalMeters: 100
         )
         options.size = CGSize(width: 100, height: 100)
-        options.mapType = .hybrid
+        options.mapType = .standard
         options.showsBuildings = true
         let snapshotter = MKMapSnapshotter(options: options)
         snapshotter.start { [weak self] snapshot, _ in

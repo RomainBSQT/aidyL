@@ -95,7 +95,7 @@ private extension ListInteractor {
                 guard let self = self else { return }
                 let profileConfigurations = profiles.mappedToProfileDisplay(
                     indexOffset: self.profiles.count,
-                    worker: worker
+                    worker: self.worker
                 )
                 if clearingLocalCacheIfSuccessful {
                     self.profiles = profileConfigurations
