@@ -12,7 +12,6 @@
 		3010BB842A2B50E2000A9440 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3010BB832A2B50E2000A9440 /* ListViewController.swift */; };
 		3010BB892A2B50E4000A9440 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3010BB882A2B50E4000A9440 /* Assets.xcassets */; };
 		3010BB8C2A2B50E4000A9440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3010BB8A2A2B50E4000A9440 /* LaunchScreen.storyboard */; };
-		3010BB972A2B50E4000A9440 /* aidyLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3010BB962A2B50E4000A9440 /* aidyLTests.swift */; };
 		301B7CDC2A2B606B00FBA147 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B7CDB2A2B606B00FBA147 /* DetailViewController.swift */; };
 		301B7CDE2A2B609200FBA147 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B7CDD2A2B609200FBA147 /* ListRouter.swift */; };
 		301B7CE22A2B661600FBA147 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B7CE12A2B661600FBA147 /* Profile.swift */; };
@@ -101,7 +100,6 @@
 		3010BB8B2A2B50E4000A9440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3010BB8D2A2B50E4000A9440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3010BB922A2B50E4000A9440 /* aidyLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aidyLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3010BB962A2B50E4000A9440 /* aidyLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aidyLTests.swift; sourceTree = "<group>"; };
 		301B7CDB2A2B606B00FBA147 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		301B7CDD2A2B609200FBA147 /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
 		301B7CE12A2B661600FBA147 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 			children = (
 				30DBDD272A3084BD00F2512E /* Mock */,
 				30DBDD0D2A307CE800F2512E /* Screens */,
-				3010BB962A2B50E4000A9440 /* aidyLTests.swift */,
 			);
 			path = aidyLTests;
 			sourceTree = "<group>";
@@ -553,7 +550,6 @@
 				30DBDD252A30837E00F2512E /* LoaderCell.swift in Sources */,
 				301B7D092A2B97CC00FBA147 /* UITableView+Reuse.swift in Sources */,
 				30DBDD2B2A30867E00F2512E /* ProfileDisplay+Mock.swift in Sources */,
-				3010BB972A2B50E4000A9440 /* aidyLTests.swift in Sources */,
 				30DBDD222A30836300F2512E /* DetailViewController.swift in Sources */,
 				30DBDD152A307D4F00F2512E /* DetailInteractorTests.swift in Sources */,
 				30DBDD232A30836C00F2512E /* DetailInteractor.swift in Sources */,
