@@ -16,7 +16,7 @@ protocol ListInteractorLogic {
     func selectProfile(_ index: Int)
 }
 
-struct ProfileConfiguration {
+struct ProfileDisplay {
     let profile: Profile
     let color: UIColor
     let imageDownloader: AnyPublisher<UIImage, Never>
@@ -29,7 +29,7 @@ final class ListInteractor: ListInteractorLogic {
     
     private var currentPage = 1
     private var isFetching = false
-    private var profiles: [ProfileConfiguration] = []
+    private var profiles: [ProfileDisplay] = []
     private var subscriptions = Set<AnyCancellable>()
     
     // MARK: - Injected
@@ -53,7 +53,7 @@ final class ListInteractor: ListInteractorLogic {
             amount: Constants.resultAmount,
             page: currentPage
         )
-        handleFetching(publisher: publisher)
+        handleFetching(publisher: publisher, clearingLocalCacheIfSuccessful: false)
     }
     
     func freshLoadProfiles() {
@@ -62,7 +62,7 @@ final class ListInteractor: ListInteractorLogic {
             amount: Constants.resultAmount,
             page: currentPage
         )
-        handleFetching(publisher: publisher)
+        handleFetching(publisher: publisher, clearingLocalCacheIfSuccessful: true)
     }
     
     func selectProfile(_ index: Int) {
@@ -76,28 +76,32 @@ private extension ListInteractor {
         subscriptions.cleanup()
         isFetching = false
         currentPage = 1
-        profiles = []
     }
     
-    func handleFetching(publisher: AnyPublisher<[Profile], APIError>) {
+    func handleFetching(
+        publisher: AnyPublisher<[Profile], APIError>,
+        clearingLocalCacheIfSuccessful: Bool
+    ) {
         publisher
-        //            .delay(for: 3, scheduler: RunLoop.main)
             .sink(receiveCompletion: { [weak self] completion in
                 self?.isFetching = false
                 switch completion {
                 case .finished:
                     self?.currentPage += 1
-                case .failure:
-                    print("")
-                    break
+                case .failure(let error):
+                    self?.presenter.error(error)
                 }
             }, receiveValue: { [weak self] profiles in
                 guard let self = self else { return }
-                let profileConfigurations = profiles.mappedToProfileConfiguration(
+                let profileConfigurations = profiles.mappedToProfileDisplay(
                     indexOffset: self.profiles.count,
                     worker: worker
                 )
-                self.profiles.append(contentsOf: profileConfigurations)
+                if clearingLocalCacheIfSuccessful {
+                    self.profiles = profileConfigurations
+                } else {
+                    self.profiles.append(contentsOf: profileConfigurations)
+                }
                 self.presenter.present(self.profiles)
             })
             .store(in: &subscriptions)
@@ -105,12 +109,12 @@ private extension ListInteractor {
 }
 
 private extension Array where Element == Profile {
-    func mappedToProfileConfiguration(
+    func mappedToProfileDisplay(
         indexOffset: Int,
         worker: RandomUserBusinessLogic
-    ) -> [ProfileConfiguration] {
+    ) -> [ProfileDisplay] {
         enumerated().map { index, profile in
-            return ProfileConfiguration(
+            return ProfileDisplay(
                 profile: profile,
                 color: UIColor.systemColor(indexOffset + index),
                 imageDownloader: worker.downloadImage(url: profile.picture.large)

@@ -24,4 +24,9 @@ enum ListScene {
             let imagePublisher: AnyPublisher<UIImage, Never>
         }
     }
+    
+    struct ErrorViewModel {
+        let title: String
+        let message: String
+    }
 }

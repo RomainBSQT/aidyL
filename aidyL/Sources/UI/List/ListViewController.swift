@@ -10,7 +10,8 @@ import UIKit
 protocol ListDisplayLogic: AnyObject {
     func initial(_ viewModel: ListScene.InitialViewModel)
     func profiles(_ viewModel: ListScene.ProfilesViewModel)
-    func showDetail(profile: ProfileConfiguration)
+    func error(_ viewModel: ListScene.ErrorViewModel)
+    func showDetail(profile: ProfileDisplay)
 }
 
 final class ListViewController: UIViewController {
@@ -90,16 +91,20 @@ extension ListViewController: ListDisplayLogic {
         cellViewModels = viewModel.profiles
         tableView.reloadData()
         refreshControl.endRefreshing()
-//        UIView.transition(
-//            with: tableView,
-//            duration: 0.35,
-//            options: .transitionCrossDissolve,
-//            animations: { self.tableView.reloadData() },
-//            completion: { _ in self.refreshControl.endRefreshing() }
-//        )
     }
     
-    func showDetail(profile: ProfileConfiguration) {
+    func error(_ viewModel: ListScene.ErrorViewModel) {
+        refreshControl.endRefreshing()
+        let alert = UIAlertController(
+            title: viewModel.title,
+            message: viewModel.message,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func showDetail(profile: ProfileDisplay) {
         router.routeToDetail(profile: profile)
     }
 }
@@ -113,7 +118,7 @@ extension ListViewController: UITableViewDataSource {
         switch TableViewSection(rawValue: section) {
         case .list: return cellViewModels.count
         case .loadingFooter: return 1
-        default: return 0
+        case .none: return 0
         }
     }
     
@@ -125,7 +130,7 @@ extension ListViewController: UITableViewDataSource {
             return cell
         case .loadingFooter:
             return tableView.dequeueReusable(at: indexPath) as LoaderCell
-        default:
+        case .none:
             return UITableViewCell()
         }
     }

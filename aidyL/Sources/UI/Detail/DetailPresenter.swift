@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol DetailPresenterLogic {
-    func start(_ profile: ProfileConfiguration)
+    func start(_ profile: ProfileDisplay)
     func mapSnapshot(_ image: UIImage)
 }
 
@@ -28,7 +28,8 @@ final class DetailPresenter: DetailPresenterLogic {
         return formatter
     }()
     
-    func start(_ profile: ProfileConfiguration) {
+    // MARK: - DetailPresenterLogic conformance
+    func start(_ profile: ProfileDisplay) {
         let streetAndName = profile.profile.location.street.formatted
         let state = profile.profile.location.state
         let country = profile.profile.location.country
@@ -42,6 +43,7 @@ final class DetailPresenter: DetailPresenterLogic {
             guard let registeredDate = formatter.date(from: profile.profile.registered.date) else { return "" }
             return dateOutputFormatter.string(from: registeredDate)
         }()
+        
         display?.initial(DetailScene.InitialViewModel(
             title: profile.profile.name.first,
             color: profile.color,

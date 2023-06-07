@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol ListRoutingLogic: AnyObject {
-    func routeToDetail(profile: ProfileConfiguration)
+    func routeToDetail(profile: ProfileDisplay)
 }
 
 final class ListRouter {
@@ -17,7 +17,7 @@ final class ListRouter {
 }
 
 extension ListRouter: ListRoutingLogic {
-    func routeToDetail(profile: ProfileConfiguration) {
+    func routeToDetail(profile: ProfileDisplay) {
         let detailViewController = DetailViewController(profile: profile)
         source?.show(detailViewController, sender: source)
     }

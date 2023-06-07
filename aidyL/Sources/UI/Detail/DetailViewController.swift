@@ -7,7 +7,6 @@
 
 import UIKit
 import Combine
-import MapKit
 
 protocol DetailDisplayLogic: AnyObject {
     func initial(_ viewModel: DetailScene.InitialViewModel)
@@ -223,7 +222,7 @@ final class DetailViewController: UIViewController {
     private let interactor: DetailInteractorLogic
     
     // MARK: - Lifecycle
-    init(profile: ProfileConfiguration) {
+    init(profile: ProfileDisplay) {
         let presenter = DetailPresenter()
         self.interactor = DetailInteractor(profile: profile, presenter: presenter)
         super.init(nibName: nil, bundle: nil)
@@ -245,7 +244,9 @@ extension DetailViewController: DetailDisplayLogic {
     func initial(_ viewModel: DetailScene.InitialViewModel) {
         title = viewModel.title
         view.backgroundColor = viewModel.color
+        
         imageView.downloadImage(publisher: viewModel.imagePublisher).store(in: &cancellables)
+        
         nameLabel.text = viewModel.name
         nationalityAndGenderLabel.text = viewModel.nationalityAndGender
         emailLabel.text = viewModel.email
@@ -361,8 +362,6 @@ private extension DetailViewController {
         datesStackView.addArrangedSubview(datesDescriptionLabel)
         datesStackView.addArrangedSubview(dOBLabel)
         datesStackView.addArrangedSubview(registeredDateLabel)
-        
-        masterStackView.addArrangedSubview(.makeSeparator())
     }
 }
 

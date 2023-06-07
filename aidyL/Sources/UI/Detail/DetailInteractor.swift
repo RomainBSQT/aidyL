@@ -14,10 +14,10 @@ protocol DetailInteractorLogic {
 
 final class DetailInteractor: DetailInteractorLogic {
     // MARK: - Injected
-    private let profile: ProfileConfiguration
+    private let profile: ProfileDisplay
     private let presenter: DetailPresenterLogic
     
-    init(profile: ProfileConfiguration, presenter: DetailPresenterLogic) {
+    init(profile: ProfileDisplay, presenter: DetailPresenterLogic) {
         self.profile = profile
         self.presenter = presenter
     }
