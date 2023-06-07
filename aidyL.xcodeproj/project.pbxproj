@@ -60,6 +60,26 @@
 		30B3DE202A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B3DE172A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Black.otf */; };
 		30B3DE212A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B3DE182A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Thin.otf */; };
 		30B3DE252A2CC53400E3CFA8 /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B3DE242A2CC53400E3CFA8 /* UIFont+Custom.swift */; };
+		30DBDD102A307D1B00F2512E /* ListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBDD0F2A307D1B00F2512E /* ListInteractorTests.swift */; };
+		30DBDD122A307D2700F2512E /* ListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBDD112A307D2700F2512E /* ListPresenterTests.swift */; };
+		30DBDD152A307D4F00F2512E /* DetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBDD142A307D4F00F2512E /* DetailInteractorTests.swift */; };
+		30DBDD172A307D5D00F2512E /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBDD162A307D5D00F2512E /* DetailPresenterTests.swift */; };
+		30DBDD1B2A307D8100F2512E /* ListPresenter+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBDD1A2A307D8100F2512E /* ListPresenter+Mock.swift */; };
+		30DBDD1D2A307D9400F2512E /* ListDisplay+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBDD1C2A307D9400F2512E /* ListDisplay+Mock.swift */; };
+		30DBDD1E2A307EC100F2512E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3010BB832A2B50E2000A9440 /* ListViewController.swift */; };
+		30DBDD1F2A307ED700F2512E /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD72A2A2DF60900AD0D3E /* String+Localized.swift */; };
+		30DBDD202A3082D700F2512E /* UIColor+System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD72F2A2E384200AD0D3E /* UIColor+System.swift */; };
+		30DBDD212A30832500F2512E /* UIFont+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B3DE242A2CC53400E3CFA8 /* UIFont+Custom.swift */; };
+		30DBDD222A30836300F2512E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B7CDB2A2B606B00FBA147 /* DetailViewController.swift */; };
+		30DBDD232A30836C00F2512E /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD7312A2E3DDB00AD0D3E /* DetailInteractor.swift */; };
+		30DBDD242A30837500F2512E /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B3DE092A2CA6E800E3CFA8 /* UIImageView+Download.swift */; };
+		30DBDD252A30837E00F2512E /* LoaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307FD72C2A2DFEBB00AD0D3E /* LoaderCell.swift */; };
+		30DBDD262A30838700F2512E /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B7CDD2A2B609200FBA147 /* ListRouter.swift */; };
+		30DBDD292A3084C700F2512E /* Profile+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBDD282A3084C700F2512E /* Profile+Mock.swift */; };
+		30DBDD2B2A30867E00F2512E /* ProfileDisplay+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBDD2A2A30867E00F2512E /* ProfileDisplay+Mock.swift */; };
+		30DBDD2D2A30893500F2512E /* RandomUserWorker+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBDD2C2A30893500F2512E /* RandomUserWorker+Mock.swift */; };
+		30DBDD2F2A308EB800F2512E /* DetailPresenter+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBDD2E2A308EB800F2512E /* DetailPresenter+Mock.swift */; };
+		30DBDD312A308EC300F2512E /* DetailDisplay+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBDD302A308EC300F2512E /* DetailDisplay+Mock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +134,17 @@
 		30B3DE172A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
 		30B3DE182A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
 		30B3DE242A2CC53400E3CFA8 /* UIFont+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Custom.swift"; sourceTree = "<group>"; };
+		30DBDD0F2A307D1B00F2512E /* ListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractorTests.swift; sourceTree = "<group>"; };
+		30DBDD112A307D2700F2512E /* ListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterTests.swift; sourceTree = "<group>"; };
+		30DBDD142A307D4F00F2512E /* DetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorTests.swift; sourceTree = "<group>"; };
+		30DBDD162A307D5D00F2512E /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
+		30DBDD1A2A307D8100F2512E /* ListPresenter+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListPresenter+Mock.swift"; sourceTree = "<group>"; };
+		30DBDD1C2A307D9400F2512E /* ListDisplay+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListDisplay+Mock.swift"; sourceTree = "<group>"; };
+		30DBDD282A3084C700F2512E /* Profile+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+Mock.swift"; sourceTree = "<group>"; };
+		30DBDD2A2A30867E00F2512E /* ProfileDisplay+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileDisplay+Mock.swift"; sourceTree = "<group>"; };
+		30DBDD2C2A30893500F2512E /* RandomUserWorker+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomUserWorker+Mock.swift"; sourceTree = "<group>"; };
+		30DBDD2E2A308EB800F2512E /* DetailPresenter+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailPresenter+Mock.swift"; sourceTree = "<group>"; };
+		30DBDD302A308EC300F2512E /* DetailDisplay+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailDisplay+Mock.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +195,8 @@
 		3010BB952A2B50E4000A9440 /* aidyLTests */ = {
 			isa = PBXGroup;
 			children = (
+				30DBDD272A3084BD00F2512E /* Mock */,
+				30DBDD0D2A307CE800F2512E /* Screens */,
 				3010BB962A2B50E4000A9440 /* aidyLTests.swift */,
 			);
 			path = aidyLTests;
@@ -174,7 +207,7 @@
 			children = (
 				3010BB7F2A2B50E2000A9440 /* AppDelegate.swift */,
 				3010BB812A2B50E2000A9440 /* SceneDelegate.swift */,
-				301B7CD82A2B604400FBA147 /* UI */,
+				301B7CD82A2B604400FBA147 /* Screens */,
 				30B3DE082A2C944300E3CFA8 /* Shared */,
 			);
 			path = Sources;
@@ -191,13 +224,13 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		301B7CD82A2B604400FBA147 /* UI */ = {
+		301B7CD82A2B604400FBA147 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				301B7CD92A2B605300FBA147 /* List */,
 				301B7CDA2A2B605900FBA147 /* Detail */,
 			);
-			path = UI;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		301B7CD92A2B605300FBA147 /* List */ = {
@@ -307,6 +340,63 @@
 				30B3DE132A2CBFFE00E3CFA8 /* SF-Pro-Rounded-Ultralight.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		30DBDD0D2A307CE800F2512E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				30DBDD0E2A307D0000F2512E /* List */,
+				30DBDD132A307D2B00F2512E /* Detail */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		30DBDD0E2A307D0000F2512E /* List */ = {
+			isa = PBXGroup;
+			children = (
+				30DBDD0F2A307D1B00F2512E /* ListInteractorTests.swift */,
+				30DBDD112A307D2700F2512E /* ListPresenterTests.swift */,
+				30DBDD182A307D6600F2512E /* Mock */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		30DBDD132A307D2B00F2512E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				30DBDD142A307D4F00F2512E /* DetailInteractorTests.swift */,
+				30DBDD162A307D5D00F2512E /* DetailPresenterTests.swift */,
+				30DBDD192A307D6F00F2512E /* Mock */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		30DBDD182A307D6600F2512E /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				30DBDD1A2A307D8100F2512E /* ListPresenter+Mock.swift */,
+				30DBDD1C2A307D9400F2512E /* ListDisplay+Mock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		30DBDD192A307D6F00F2512E /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				30DBDD2E2A308EB800F2512E /* DetailPresenter+Mock.swift */,
+				30DBDD302A308EC300F2512E /* DetailDisplay+Mock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		30DBDD272A3084BD00F2512E /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				30DBDD282A3084C700F2512E /* Profile+Mock.swift */,
+				30DBDD2A2A30867E00F2512E /* ProfileDisplay+Mock.swift */,
+				30DBDD2C2A30893500F2512E /* RandomUserWorker+Mock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,19 +541,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30DBDD202A3082D700F2512E /* UIColor+System.swift in Sources */,
 				301B7D032A2B95BD00FBA147 /* ListPresenter.swift in Sources */,
+				30DBDD102A307D1B00F2512E /* ListInteractorTests.swift in Sources */,
+				30DBDD122A307D2700F2512E /* ListPresenterTests.swift in Sources */,
+				30DBDD1B2A307D8100F2512E /* ListPresenter+Mock.swift in Sources */,
+				30DBDD312A308EC300F2512E /* DetailDisplay+Mock.swift in Sources */,
+				30DBDD172A307D5D00F2512E /* DetailPresenterTests.swift in Sources */,
+				30DBDD242A30837500F2512E /* UIImageView+Download.swift in Sources */,
 				301B7CF62A2B93EE00FBA147 /* UIView+Embed.swift in Sources */,
+				30DBDD252A30837E00F2512E /* LoaderCell.swift in Sources */,
 				301B7D092A2B97CC00FBA147 /* UITableView+Reuse.swift in Sources */,
+				30DBDD2B2A30867E00F2512E /* ProfileDisplay+Mock.swift in Sources */,
 				3010BB972A2B50E4000A9440 /* aidyLTests.swift in Sources */,
+				30DBDD222A30836300F2512E /* DetailViewController.swift in Sources */,
+				30DBDD152A307D4F00F2512E /* DetailInteractorTests.swift in Sources */,
+				30DBDD232A30836C00F2512E /* DetailInteractor.swift in Sources */,
 				301B7CE82A2B6D7400FBA147 /* RandomUserWorker.swift in Sources */,
 				307FD7352A2E3DEF00AD0D3E /* DetailPresenter.swift in Sources */,
 				301B7D0C2A2BCF3600FBA147 /* UIEdgeInsets+Convenience.swift in Sources */,
+				30DBDD212A30832500F2512E /* UIFont+Custom.swift in Sources */,
 				301B7D062A2B978B00FBA147 /* UITableViewCell+Reuse.swift in Sources */,
+				30DBDD292A3084C700F2512E /* Profile+Mock.swift in Sources */,
+				30DBDD2D2A30893500F2512E /* RandomUserWorker+Mock.swift in Sources */,
 				301B7D002A2B95B200FBA147 /* ListInteractor.swift in Sources */,
 				301B7CF22A2B8CE300FBA147 /* API+RandomUser.swift in Sources */,
+				30DBDD1E2A307EC100F2512E /* ListViewController.swift in Sources */,
+				30DBDD262A30838700F2512E /* ListRouter.swift in Sources */,
 				301B7CEC2A2B703F00FBA147 /* API.swift in Sources */,
 				301B7CE32A2B661600FBA147 /* Profile.swift in Sources */,
+				30DBDD2F2A308EB800F2512E /* DetailPresenter+Mock.swift in Sources */,
+				30DBDD1F2A307ED700F2512E /* String+Localized.swift in Sources */,
 				307FD73B2A2F33B000AD0D3E /* Set+CancellableCleanup.swift in Sources */,
+				30DBDD1D2A307D9400F2512E /* ListDisplay+Mock.swift in Sources */,
 				301B7CFD2A2B95A600FBA147 /* ListViewModel.swift in Sources */,
 				307FD7382A2E3DFA00AD0D3E /* DetailViewModel.swift in Sources */,
 				301B7CFA2A2B94A600FBA147 /* ProfileCell.swift in Sources */,

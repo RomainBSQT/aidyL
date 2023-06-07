@@ -20,7 +20,7 @@ struct Profile: Identifiable, Codable {
     let dOB: RemoteDate
     let registered: RemoteDate
     
-    private let genderRaw: String
+    let genderRaw: String
     
     enum Gender {
         case male
