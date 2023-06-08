@@ -15,6 +15,6 @@ Rendu pour le test technique
 
 ### Screenshots :
 <tr>
-  <td><img src="https://github.com/RomainBSQT/aidyL/assets/4136360/8836a057-7345-4cac-99fe-f6b09e407af6" width=300></td>
   <td><img src="https://github.com/RomainBSQT/aidyL/assets/4136360/92df6235-4819-4d90-8ecf-ccf8c8f7ac92" width=300></td>
+  <td><img src="https://github.com/RomainBSQT/aidyL/assets/4136360/8836a057-7345-4cac-99fe-f6b09e407af6" width=300></td>
 </tr>
