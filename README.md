@@ -1,4 +1,4 @@
-# iOS - Technical test subject - Lydia
+# iOS - Technical test subject
 
 Rendu pour le test technique
 
@@ -15,6 +15,6 @@ Rendu pour le test technique
 
 ### Screenshots :
 <tr>
-  <td><img src="https://github.com/RomainBSQT/aidyL/assets/4136360/03281777-bfec-42a5-b09a-56c2375f8c8d" width=300></td>
-  <td><img src="https://github.com/RomainBSQT/aidyL/assets/4136360/3dea6625-dd69-4f7b-837b-e1804ee737a8" width=300></td>
+  <td><img src="https://github.com/RomainBSQT/aidyL/assets/4136360/8836a057-7345-4cac-99fe-f6b09e407af6" width=300></td>
+  <td><img src="https://github.com/RomainBSQT/aidyL/assets/4136360/92df6235-4819-4d90-8ecf-ccf8c8f7ac92" width=300></td>
 </tr>
