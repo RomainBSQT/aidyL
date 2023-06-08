@@ -21,7 +21,7 @@ extension API: RandomUserDatasource {
     }
 
     func fetchRandomUsers(amount: Int, page: Int) -> AnyPublisher<[Profile], APIError> {
-        fetchUsers(amount: amount, page: page, cachePolicy: .returnCacheDataElseLoad)
+        return fetchUsers(amount: amount, page: page, cachePolicy: .returnCacheDataElseLoad)
     }
     
     func fetchFreshRandomUsers(amount: Int, page: Int) -> AnyPublisher<[Profile], APIError> {

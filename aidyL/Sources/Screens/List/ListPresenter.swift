@@ -18,6 +18,7 @@ protocol ListPresenterLogic {
 final class ListPresenter: ListPresenterLogic {
     weak var display: ListDisplayLogic?
     
+    // MARK: - ListPresenterLogic conformance
     func start() {
         display?.initial(ListScene.InitialViewModel())
     }
