@@ -58,6 +58,7 @@ final class ListInteractor: ListInteractorLogic {
     
     func freshLoadProfiles() {
         cleanup()
+        isFetching = true
         let publisher = worker.fetchFreshRandomUsers(
             amount: Constants.resultAmount,
             page: currentPage
@@ -93,14 +94,16 @@ private extension ListInteractor {
                 }
             }, receiveValue: { [weak self] profiles in
                 guard let self = self else { return }
-                let profileConfigurations = profiles.mappedToProfileDisplay(
-                    indexOffset: self.profiles.count,
-                    worker: self.worker
-                )
                 if clearingLocalCacheIfSuccessful {
-                    self.profiles = profileConfigurations
+                    self.profiles = profiles.mappedToProfileDisplay(
+                        indexOffset: 0,
+                        worker: self.worker
+                    )
                 } else {
-                    self.profiles.append(contentsOf: profileConfigurations)
+                    self.profiles.append(contentsOf: profiles.mappedToProfileDisplay(
+                        indexOffset: self.profiles.count,
+                        worker: self.worker
+                    ))
                 }
                 self.presenter.present(self.profiles)
             })
@@ -110,7 +113,7 @@ private extension ListInteractor {
 
 private extension Array where Element == Profile {
     func mappedToProfileDisplay(
-        indexOffset: Int,
+        indexOffset: Int = 0,
         worker: RandomUserBusinessLogic
     ) -> [ProfileDisplay] {
         enumerated().map { index, profile in

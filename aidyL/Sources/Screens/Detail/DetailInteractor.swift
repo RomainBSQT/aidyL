@@ -38,7 +38,6 @@ private extension DetailInteractor {
         let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         guard CLLocationCoordinate2DIsValid(coordinates) else { return }
         
-        
         let options = MKMapSnapshotter.Options()
         options.region = MKCoordinateRegion(
             center: coordinates,
